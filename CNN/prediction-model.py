@@ -326,6 +326,7 @@ def Prediction(input_data):
 
     prediction = loaded_model.predict(std_data)
 
+
     if prediction[0]<=0.5:
         return "Benign"
     else:
@@ -338,8 +339,9 @@ def main():
     
     col1, col2 = st.columns(2)
 
-    radius_mean = col1.text_input('Radius Mean')
+    
     try:
+        radius_mean = col1.text_input('Radius Mean')
         if 6.9810 <= float(radius_mean) <= 28.1100:
             pass
         else:
